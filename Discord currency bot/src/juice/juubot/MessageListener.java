@@ -55,7 +55,7 @@ public class MessageListener extends ListenerAdapter
         // we would use AccountType.CLIENT
         try
         {
-            JDA jda = JDABuilder.createDefault("NzIxMDk1NDc2NTUxNjE0NTA0.XuPpKQ.jdonwHrDaVryrErT79KIIbJlu5A") // The token of the account that is logging in.
+            JDA jda = JDABuilder.createDefault(Token.MY_TOKEN) // The token of the account that is logging in.
                     .addEventListeners(new MessageListener())   // An instance of a class that will handle events.
                     .build();
             jda.awaitReady(); // Blocking guarantees that JDA will be completely loaded.
@@ -581,7 +581,7 @@ public class MessageListener extends ListenerAdapter
 //			 String json = gson.toJson(users);
 //			 System.out.println(json);
 		        try{
-		            FileWriter writer = new FileWriter("users.txt");
+		            FileWriter writer = new FileWriter(FILENAME);
 		            writer.write(gson.toJson(this.users));
 		            writer.close();
 		        } catch (IOException e) {
@@ -594,7 +594,7 @@ public class MessageListener extends ListenerAdapter
 
 		        String inFile = "";
 		        try{
-		            inFile = new String(Files.readAllBytes(Paths.get("users.txt")));
+		            inFile = new String(Files.readAllBytes(Paths.get(FILENAME)));
 		        }catch (IOException e) {
 		e.printStackTrace();
 		        }

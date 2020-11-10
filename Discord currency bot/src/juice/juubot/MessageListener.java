@@ -37,11 +37,11 @@ import java.util.concurrent.ThreadLocalRandom;
 public class MessageListener extends ListenerAdapter
 {
 	public static final String PREFIX = "$";
-	private static final String FILENAME = "userscash.txt";
+	private static final String FILENAME = "users.txt";
 	private static final int FIELDS = 5;
 	public ArrayList<CashUser> users = new ArrayList<>();
 	private final static int LB_ID = 1;
-	private static boolean firsCall = true;
+
 	textmanipulation.readfile.Read r = new Read();
 	
 	public ArrayList<CashUser> users2 = new ArrayList<>();
